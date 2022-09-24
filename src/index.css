@@ -1,6 +1,7 @@
 
-* {
+:root {
   box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 body {
@@ -15,6 +16,14 @@ header {
   text-align: center;
   font-size: 35px;
   color: white;
+}
+
+article {
+  float: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #d4d6d8;
+  text-align: center;
 }
 
 #chatMessages {
@@ -33,10 +42,94 @@ header {
 #chatMessages .message {
   border-radius: 20px;
   padding: 2px;
-  max-width: 450px;
+  max-width: 95%;
   margin: 2px;
   background-color: #ffffff;
   text-align: center;
+}
+
+img {
+  float: right ;
+  width: auto; 
+  max-width: 15%; 
+  max-height: 450px;
+  transition:height 1s ease-in;
+  overflow:hidden;
+}
+
+img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+form {
+  text-align: center;
+}
+
+button {
+	background: #255ff4;
+	border-radius: 0.2em;
+	color: #fff;
+	cursor: pointer;
+	margin: auto;
+	padding: 0.5em 1em;
+	transition: background .15s linear, color .15s linear;
+}
+button:focus, button:hover {
+	background: #255ff4;
+}
+button:focus {
+	outline: transparent;
+}
+button::-moz-focus-inner {
+	border: 0;
+}
+button:active {
+	transform: translateY(0.1em);
+}
+.exploding, .exploding:focus, .exploding:hover {
+	background: transparent;
+	color: transparent;
+}
+.exploding {
+	pointer-events: none;
+	position: relative;
+	will-change: transform;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.particle {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.particle--debris {
+	background: #255ff4;
+}
+.particle--fire {
+	border-radius: 50%;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #17181c;
+	}
 }
 
 nav {
@@ -46,50 +139,6 @@ nav {
   height: 50px; 
   background: #d4d6d8;
   padding: 20px;
-}
-
-form {
-  text-align: center;
-}
-
-article {
-  float: center;
-  padding: 20px;
-  width: 100%;
-  background-color: #d4d6d8;
-  text-align: center;
-}
-
-span {
-  color: #008cd1;
-  font-style: italic;
-}
-
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-img {
-  float: right ;
-  width: auto; 
-  max-width: 300px; 
-  max-height: 450px;
-  transition:height 1s ease-in;
-  overflow:hidden;
-}
-
-
-.wrapper{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    margin: 0.5em;
-}
-
-form {
-  text-align: center;
 }
 
 footer {
